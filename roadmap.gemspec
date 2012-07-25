@@ -14,4 +14,16 @@ Gem::Specification.new do |gem|
   gem.name          = "roadmap"
   gem.require_paths = ["lib"]
   gem.version       = Roadmap::VERSION
+
+  gem.add_dependency 'rack', '~> 1.4.1'
+  gem.add_dependency 'sinatra', '~> 1.3.2'
+  gem.add_dependency 'rocketeer', '~> 0.5.0'
+  gem.add_dependency 'sequel', '~> 3.36.1'
+  gem.add_dependency 'sequel_sluggable', '~> 0.0.6'
+  gem.add_dependency 'mysql2', '~> 0.3.11'
+  gem.add_dependency 'bcrypt-ruby', '~> 3.0.1'
+  gem.add_dependency 'redcarpet', '~> 2.1.1'
+
+  gem.add_development_dependency 'sass', '~> 3.1.20'
+  gem.add_development_dependency 'bacon', '~> 1.1.0'
 end

@@ -1,0 +1,20 @@
+<div class="content">
+	<h2><%= L(:projects) %></h2>
+	<div id="projects">
+	<% @projects.each do |p| %>
+		<div class="project">
+			<h2><%= link_to p.name, p.href %></h2>
+			<div class="quick_links">
+				<ul>
+					<li><%= link_to L(:issues), p.href('/issues') %></li>
+					<li><%= link_to L(:roadmap), p.href('/roadmap') %></li>
+					<li><%= link_to L(:timeline), p.href('/timeline') %></li>
+				</ul>
+			</div>
+			<div class="info">
+				<%= format_text p.description %>
+			</div>
+		</div>
+	<% end %>
+	</div>
+</div>
