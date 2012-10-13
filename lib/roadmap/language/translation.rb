@@ -24,6 +24,8 @@ module Roadmap
       attr_accessor :name
       attr_accessor :language
       attr_accessor :strings
+      attr_accessor :string_compiler
+      attr_accessor :numeral_calculator
 
       def self.add
         translation = new
@@ -59,6 +61,8 @@ module Roadmap
       # @return [Integer]
       #
       def calculate_numeral(i)
+        return @numeral_calculator.call(i) if @numeral_calculator
+
         if i > 1 or i < -1 or i == 0
           1
         else
@@ -86,6 +90,8 @@ module Roadmap
         else
           return false
         end
+
+        return @string_compiler.call(key, vars) if @string_compiler
 
         # Convert {x} to appropriate string variable
         i = 0
