@@ -31,12 +31,13 @@ module Roadmap
       t['copyright'] = "Powered by Roadmap #{Roadmap::VERSION}, &copy; #{Time.now.year} Roadmap"
 
       # Users
-      t['login']    = "Login"
-      t['logout']   = "Logout"
-      t['register'] = "Register"
-      t['username'] = "Username"
-      t['password'] = "Password"
-      t['email']    = "Email"
+      t['login']     = "Login"
+      t['logout']    = "Logout"
+      t['register']  = "Register"
+      t['username']  = "Username"
+      t['password']  = "Password"
+      t['email']     = "Email"
+      t['full_name'] = "Full name"
 
       # Global
       t['admincp']          = "AdminCP"
