@@ -1,7 +1,7 @@
 <div class="register_form content">
   <h2><%=t :register %></h2>
 
-  <form action="/register" method="post" class="tabular box row span5 offset3">
+  <form action="/register" method="post" class="tabular box">
     <div class="group">
       <%= label t(:username), :for => [:user, :username] %>
       <%= input_field [:user, :username] %>
@@ -22,5 +22,4 @@
       <%= submit_button t(:login) %>
     </div>
   </form>
-  <div class="clearfix"></div>
 </div>
