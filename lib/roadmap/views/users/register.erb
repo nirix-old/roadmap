@@ -1,6 +1,7 @@
 <div class="register_form content">
   <h2><%=t :register %></h2>
 
+  <% show_errors @user.errors %>
   <form action="/register" method="post" class="tabular box">
     <div class="group">
       <%= label t(:username), :for => [:user, :username] %>
@@ -19,7 +20,7 @@
       <%= input_field [:user, :email] %>
     </div>
     <div class="group">
-      <%= submit_button t(:login) %>
+      <%= submit_button t(:register) %>
     </div>
   </form>
 </div>
