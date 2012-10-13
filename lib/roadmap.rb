@@ -24,7 +24,8 @@ require 'redcarpet'
 DIR = File.dirname(__FILE__)
 
 require "roadmap/version"
-require "roadmap/libs/language"
+require "roadmap/language"
+require "roadmap/language/translation"
 require "roadmap/locale/init"
 
 require "./config/database"
@@ -44,7 +45,6 @@ end
 require "roadmap/models/init"
 require "roadmap/helpers/init"
 
-LOCALE = Roadmap::Language.load(Setting.find(:setting => 'locale').value)
 MARKDOWN = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true)
 
-require "roadmap/nodes/init"
+require "roadmap/routes/init"

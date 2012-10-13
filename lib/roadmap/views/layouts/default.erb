@@ -1,5 +1,5 @@
 <!doctype HTML>
-<html lang="<%= LOCALE.info[:name_short] %>" dir="<%= LOCALE.info[:dir] %>">
+<html>
 	<head>
 		<title><%= @title.reverse.join(' - ') %></title>
 		<meta charset="utf-8">
@@ -13,12 +13,12 @@
 				<nav id="nav">
 					<ul>
 					<% if current_project %>
-						<li><%= link_to L(:issues), current_project.href('/issues') %></li>
-						<li><%= link_to L(:roadmap), current_project.href('/roadmap') %></li>
-						<li><%= link_to L(:timeline), '#' %></li>
+						<li><%= link_to t(:issues), current_project.href('/issues') %></li>
+						<li><%= link_to t(:roadmap), current_project.href('/roadmap') %></li>
+						<li><%= link_to t(:timeline), '#' %></li>
 					<% else %>
-						<li><%= link_to L(:projects), '/' %></li>
-						<li><%= link_to L(:activity), '/activity' %></li>
+						<li><%= link_to t(:projects), '/' %></li>
+						<li><%= link_to t(:activity), '/activity' %></li>
 					<% end %>
 					</ul>
 				</nav>
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<footer id="footer">
-			<%= L(:copyright) %>
+			<%=t :copyright %>
 		</footer>
 	</body>
 </html>

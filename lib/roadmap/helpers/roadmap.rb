@@ -23,8 +23,8 @@ helpers do
     @title.push s
   end
 
-  def L(string, vars = [])
-    LOCALE.translate(string, vars)
+  def t(string, vars = [])
+    Roadmap::Language.translate(string, vars)
   end
 
   def setting(setting)
