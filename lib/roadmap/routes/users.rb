@@ -44,7 +44,7 @@ post '/register' do
 
   if @user.valid?
     @user.save
-    flash[:success] = L(:registration_successfull)
+    flash[:success] = t(:registration_successfull)
     redirect '/login'
   else
     view 'users/register'

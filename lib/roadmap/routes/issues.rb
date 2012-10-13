@@ -16,15 +16,17 @@
 # along with Roadmap. If not, see <http://www.gnu.org/licenses/>.
 #
 
-Dir.glob(File.dirname(__FILE__) + '/**/*.rb').each do |node|
-  require(node)
+before '/:project_slug/issues(.*)' do
+  title t(:issues)
 end
 
-before do
-  title setting(:title)
+get '/:project_slug/issues' do
+  @issues = Issue.where(:project_id => current_project.id).all
+  view 'issues/index'
 end
 
-before '/:project_slug*' do
-  @current_project = Project.is_project(params[:project_slug])
-  title @current_project.name if @current_project
+get '/:project_slug/issues/:issue_id' do
+  @issue = Issue.find(:issue_id => params[:issue_id])
+  title @issue.summary
+  view 'issues/view'
 end
