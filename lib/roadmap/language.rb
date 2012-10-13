@@ -26,17 +26,29 @@ module Roadmap
     REGISTERED = {}
 
     class << self
-      attr_accessor :current
+      attr_accessor :current_language
+
+      def current
+        REGISTERED[current_language]
+      end
+
+      def use(language)
+        language = language.to_s
+
+        if REGISTERED.has_key?(language)
+          @current_language = language
+        else
+          raise "Unable to use language '#{language}`: not loaded"
+        end
+      end
     end
 
     def self.translate(index, vars = [])
-      current_language = REGISTERED[current.to_s]
-
       if index.is_a?(Array)
         index = index.join('.')
       end
 
-      if string = current_language.compile_string(index.to_s, vars)
+      if string = current.compile_string(index.to_s, vars)
         string
       else
         "[#{index}]"

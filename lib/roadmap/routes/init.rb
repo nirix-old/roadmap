@@ -22,7 +22,7 @@ end
 
 before do
   title setting(:title)
-  Roadmap::Language.current = Setting.find(setting: 'locale').value
+  Roadmap::Language.use Setting.find(setting: 'language').value
 end
 
 before '/:project_slug*' do

@@ -23,7 +23,7 @@
 # @copyright Jack P.
 #
 module Roadmap
-  Language::Translateion.add do |translation|
+  Language::Translation.add do |translation|
     translation.name = "English [AU]"
     translation.language = :enAU
 
