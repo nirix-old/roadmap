@@ -22,65 +22,47 @@
 # @author Jack P.
 # @copyright Jack P.
 #
-class Locale_enAU < Roadmap::Language
-  ##
-  # Returns the localization info
-  #
-  # @return [Hash]
-  #
-  def info
-    {
-      :name => "English",
-      :name_short => :en,
-      :locale => :AU,
-      :dir => 'ltr',
-      :author => "Jack P."
-    }
-  end
+module Roadmap
+  Language::Translateion.add do |translation|
+    translation.name = "English [AU]"
+    translation.language = :enAU
 
-  ##
-  # Returns the localization strings
-  #
-  # @return [Hash]
-  #
-  def strings
-    {
-      :copyright => "Powered by Roadmap #{Roadmap::VERSION}, &copy; #{Time.now.year} Roadmap",
+    translation.translate do |t|
+      t['copyright'] = "Powered by Roadmap #{Roadmap::VERSION}, &copy; #{Time.now.year} Roadmap"
 
-      :login => 'Login',
-      :logout => 'Logout',
-      :register => 'Register',
-      :admincp => 'AdminCP',
+      # Users
+      t['login']    = "Login"
+      t['logout']   = "Logout"
+      t['register'] = "Register"
+      t['username'] = "Username"
+      t['password'] = "Password"
+      t['email']    = "Email"
 
-      :activity => 'Activity',
-      :projects => 'Projects',
-      :issues => 'Issues',
-      :roadmap => 'Roadmap',
-      :timeline => 'Timeline',
-      :description => 'Description',
-      :summary => 'Summary',
-      :status => 'Status',
-      :priority => 'Priority',
-      :assignee => 'Assignee',
-      :component => 'Component',
-      :milestone => 'Milestone',
-      :affected_version => 'Affected version',
-      :reported_by => 'Reported by',
-      :reported => 'Reported',
-      :updated => 'Updated',
+      # Global
+      t['admincp']          = "AdminCP"
+      t['activity']         = "Activity"
+      t['projects']         = "Projects"
+      t['issues']           = "Issues"
+      t['roadmap']          = "Roadmap"
+      t['timeline']         = "Timeline"
 
-      :username => 'Username',
-      :password => 'Password',
-      :email => 'Email',
-      
-      :never => 'Never',
-
-      :x_open => '{1} Open',
+      # Issues
+      t['description']      = "Description"
+      t['summary']          = "Summary"
+      t['status']           = "Status"
+      t['priority']         = "Priority"
+      t['assignee']         = "Assignee"
+      t['component']        = "Component"
+      t['milestone']        = "Milestone"
+      t['affected_version'] = "Affected version"
+      t['reported_by']      = "Reported by"
+      t['reported']         = "Reported"
+      t['updated']          = "Updated"
+      t['never']            = "Never"
+      t['x_open']           = "{1} Open"
 
       # Errors
-      :errors => {
-        :invalid_username_or_password => 'Invalid username and/or password'
-      }
-    }
+      t['errors.invalid_username_or_password'] = "Invalid username and/or password"
+    end
   end
 end
