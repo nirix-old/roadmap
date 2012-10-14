@@ -16,5 +16,5 @@
 # along with Roadmap. If not, see <http://www.gnu.org/licenses/>.
 #
 
-class IssueStatus < Sequel::Model
+class Priority < Sequel::Model
 end
