@@ -20,12 +20,13 @@ class Issue < Sequel::Model
   many_to_one :project
   many_to_one :user
   many_to_one :assignee, :class => :User
-  many_to_one :status, :class => :IssueStatus
-  many_to_one :priority, :class => :IssuePriority
+  many_to_one :type
+  many_to_one :status
+  many_to_one :priority
   many_to_one :milestone, :class => :Version
   many_to_one :version
   many_to_one :component
-  
+
   def href
     "/#{project.slug}/issues/#{issue_id}"
   end
