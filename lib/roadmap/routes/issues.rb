@@ -21,7 +21,7 @@ before '/:project_slug/issues(.*)' do
 end
 
 get '/:project_slug/issues' do
-  @issues = Issue.where(:project_id => current_project.id).all
+  @issues = Issue.where(project_id: current_project.id).join(:priorities, id: :priority_id).order(Sequel.desc(:weight)).all
   view 'issues/index'
 end
 
