@@ -61,6 +61,7 @@ module Roadmap
       t['updated']          = "Updated"
       t['never']            = "Never"
       t['x_open']           = "{1} Open"
+      t['type']             = "Type"
 
       # Errors
       t['errors.invalid_username_or_password'] = "Invalid username and/or password"
