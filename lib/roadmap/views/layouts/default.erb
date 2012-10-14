@@ -9,7 +9,7 @@
 	<body>
 		<header id="header">
 			<div class="page_width">
-				<h1><%= link_to setting(:title), '/' %><% if current_project %> / <%= link_to current_project.name, current_project.href %><% end %></h1>
+				<h1><%= if current_project then link_to(current_project.name, current_project.href) else link_to(setting(:title), '/') end %></h1>
 				<nav id="nav">
 					<ul>
 					<% if current_project %>
