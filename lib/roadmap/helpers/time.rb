@@ -18,7 +18,7 @@
 
 helpers do
   def time_ago(timestamp, from_timestamp = nil)
-    return L(:never) if timestamp.nil? or timestamp === 0
+    return t(:never) if timestamp.nil? or timestamp === 0
 
     from_timestamp = Time.now.to_i if from_timestamp.nil?
 
