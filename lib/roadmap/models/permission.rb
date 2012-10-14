@@ -16,23 +16,26 @@
 # along with Roadmap. If not, see <http://www.gnu.org/licenses/>.
 #
 
-require 'bcrypt'
+class Permission < Sequel::Model
+  def can?(context, project_id, action)
+    action = action.to_s
 
-class User < Sequel::Model
-  def href
-    "/users/#{id}"
-  end
+    default = find(context: context.class, context_id: 0, project_id: 0, action: action)
+    project_default = find(ccontext: context.class, ontext_id: context.id, project_id: project_id, action: action)
+    actual = find(context: context.class, context_id: context.id, project_id: project.id, action: action)
 
-  def can?(context, action, project_id = nil)
-    project_id = @current_project.id if project_id == nil
-    Permission.can?(context, project_id, action)
-  end
-
-  def self.check_credentials(user, pass)
-    if u = find(username: user) and BCrypt::Password.new(pass) == u.password
-      u
+    if actual
+      actual.allowed?
+    elsif project_default
+      project_default.allowed?
+    elsif default
+      default.allowed?
     else
       false
     end
+  end
+
+  def allowed?
+    value == 1 or value == true
   end
 end
