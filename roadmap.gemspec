@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["nrx@nirix.net"]
   gem.description   = %q{Roadmap is a muliple project issue tracker.}
   gem.summary       = %q{Multiple project issue tracker.}
-  gem.homepage      = ""
+  gem.homepage      = "http://roadmaprb.com"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
