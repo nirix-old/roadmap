@@ -26,7 +26,7 @@ get '/:project_slug/issues' do
 end
 
 get '/:project_slug/issues/:issue_id' do
-  @issue = Issue.find(:issue_id => params[:issue_id])
+  @issue = Issue.find(issue_id: params[:issue_id])
   title @issue.summary
   view 'issues/view'
 end
