@@ -1,5 +1,6 @@
+#
 # Roadmap
-# Copyright (C) 2012 Nirix
+# Copyright (C) 2012-2013 J. Polgar
 # https://github.com/nirix
 #
 # Roadmap is free software: you can redistribute it and/or modify
@@ -73,8 +74,8 @@ module Roadmap
       ##
       # Compiles the string with passed variables, if any.
       #
-      # @param [String] string
-      # @param [Array] vars
+      # @param [String] key
+      # @param [Array]  vars
       #
       # @return [String]
       #

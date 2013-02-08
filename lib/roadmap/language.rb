@@ -1,6 +1,6 @@
 #
 # Roadmap
-# Copyright (C) 2012 Nirix
+# Copyright (C) 2012-2013 J. Polgar
 # https://github.com/nirix
 #
 # Roadmap is free software: you can redistribute it and/or modify
@@ -20,8 +20,6 @@ module Roadmap
   ##
   # Language class
   #
-  # @copyright Jack P.
-  #
   class Language
     # Registered/loaded languages
     REGISTERED = {}
@@ -40,6 +38,8 @@ module Roadmap
       ##
       # Sets the language to be used.
       #
+      # @param [String] language
+      #
       def use(language)
         language = language.to_s
 
@@ -56,6 +56,11 @@ module Roadmap
       #
       # If the index doesn't exist then
       # the index is returned.
+      #
+      # @param [String] index
+      # @param [Array]  vars
+      #
+      # @return [String]
       #
       def translate(index, vars = [])
         if index.is_a?(Array)
