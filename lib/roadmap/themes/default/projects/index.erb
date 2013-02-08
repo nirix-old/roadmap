@@ -1,0 +1,10 @@
+<div class="projects content">
+	<h2 class="page_title"><%=t :projects %></h2>
+	<ul id="projects">
+	<% @projects.each do |project| %>
+		<li class="project">
+			<h3><%=link_to project.name, project.href %></h3>
+		</li>
+	<% end %>
+	</ul>
+</div>

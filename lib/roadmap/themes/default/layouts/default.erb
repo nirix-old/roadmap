@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title.join ' - ' %></title>
+		<%= css_link_tag 'assets/css/roadmap.css' %>
+	</head>
+	<body>
+		<div id="header">
+			<div class="container">
+				<h1><%=link_to setting(:title), '/' %></h1>
+				<div id="nav">
+					<ul class="meta">
+						<li><%=link_to t(:login), '/' %></li>
+						<li><%=link_to t(:register), '/' %></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<%=yield%>
+		</div>
+	</body>
+</html>
