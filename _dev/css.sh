@@ -1,1 +1,0 @@
-sass --watch _dev/css:lib/roadmap/proto/public/assets/css --style compressed
