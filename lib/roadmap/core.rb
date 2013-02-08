@@ -16,40 +16,33 @@
 # along with Roadmap. If not, see <http://www.gnu.org/licenses/>.
 #
 
-require "sinatra/base"
-require "sequel"
-require "rocketeer"
-require "roadmap/version"
-require "roadmap/theme"
-require "roadmap/themes/default"
-require "roadmap/helpers/roadmap"
-require "roadmap/helpers/views"
-require "roadmap/core"
-require "roadmap/routes/base"
-require "roadmap/routes/projects"
-require "roadmap/app"
-
 module Roadmap
-  class << self
-    ##
-    # Starts Sinatra
-    #
-    def start
-      App.run!
-    end
+  ROADMAP_DIR = File.dirname(__FILE__)
+  class Core < Sinatra::Base
+    attr_accessor :database
 
-    ##
-    # Configure block
-    #
-    def config(&block)
-      block.call(Core)
+    helpers Helpers
+    helpers Rocketeer::Helpers::HTML
+    helpers Rocketeer::Helpers::Form
+    helpers Rocketeer::Helpers::Text
 
-      # Set sessions
-      Core.set sessions: {
-        key: "_roadmap_session",
-        secret: Core.settings.session_secret,
-        expire_after: 13000000
-      }
+    set root: ROADMAP_DIR
+    enable :static
+
+    class << self
+      ##
+      # Sets the database connection and loads the models.
+      #
+      # @param [Sequel::Mysql2::Database] database
+      #
+      def database=(database)
+        @database = database
+
+        require "roadmap/models/project"
+        require "roadmap/models/setting"
+
+        include Models
+      end
     end
   end
 end

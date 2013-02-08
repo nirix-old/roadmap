@@ -16,40 +16,13 @@
 # along with Roadmap. If not, see <http://www.gnu.org/licenses/>.
 #
 
-require "sinatra/base"
-require "sequel"
-require "rocketeer"
-require "roadmap/version"
-require "roadmap/theme"
-require "roadmap/themes/default"
-require "roadmap/helpers/roadmap"
-require "roadmap/helpers/views"
-require "roadmap/core"
-require "roadmap/routes/base"
-require "roadmap/routes/projects"
-require "roadmap/app"
-
 module Roadmap
-  class << self
-    ##
-    # Starts Sinatra
-    #
-    def start
-      App.run!
-    end
-
-    ##
-    # Configure block
-    #
-    def config(&block)
-      block.call(Core)
-
-      # Set sessions
-      Core.set sessions: {
-        key: "_roadmap_session",
-        secret: Core.settings.session_secret,
-        expire_after: 13000000
-      }
-    end
+  ##
+  # The "App" class that pulls the routes
+  # into one class so they can be found when
+  # App.run! is called.
+  #
+  class App < Core
+    use Routes::Projects
   end
 end
