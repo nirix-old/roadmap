@@ -1,6 +1,6 @@
 #
 # Roadmap
-# Copyright (C) 2012 Nirix
+# Copyright (C) 2012-2013 J. Polgar
 # https://github.com/nirix
 #
 # Roadmap is free software: you can redistribute it and/or modify
@@ -16,8 +16,17 @@
 # along with Roadmap. If not, see <http://www.gnu.org/licenses/>.
 #
 
-helpers do
-  def format_text(text)
-    MARKDOWN.render text
+module Roadmap
+  module Helpers
+    ##
+    # Formats the text in Markdown.
+    #
+    # @param [String] text
+    #
+    # @return [String]
+    #
+    def format_text(text)
+      MARKDOWN.render text
+    end
   end
 end

@@ -1,6 +1,6 @@
 #
 # Roadmap
-# Copyright (C) 2012 Nirix
+# Copyright (C) 2012-2013 J. Polgar
 # https://github.com/nirix
 #
 # Roadmap is free software: you can redistribute it and/or modify
@@ -16,22 +16,40 @@
 # along with Roadmap. If not, see <http://www.gnu.org/licenses/>.
 #
 
-helpers do
-  def title(s = nil)
-    @title = [] if not @title
-    return @title if s === nil
-    @title.push s
-  end
+module Roadmap
+  module Helpers
+    ##
+    # Sets (or returns) the title.
+    #
+    # @param [String] t
+    #
+    # @return [Array]
+    #
+    def title(t = nil)
+      @title ||= []
+      return @title if t.nil?
+      @title.push t
+    end
 
-  def t(string, vars = [])
-    Roadmap::Language.translate(string, vars)
-  end
+    ##
+    # Returns the value of the setting
+    #
+    # @param [Symbol] setting
+    #
+    # @return mixed
+    #
+    def setting(setting)
+      setting = setting.to_s
+      Roadmap::Models::Setting.find(setting: setting).value
+    end
 
-  def setting(setting)
-    Setting.find(:setting => setting.to_s).value
-  end
-
-  def current_project
-    @current_project
+    ##
+    # Returns the current projects model.
+    #
+    # @return [Roadmap::Models::Project]
+    #
+    def current_project
+      @current_project
+    end
   end
 end

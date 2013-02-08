@@ -19,6 +19,7 @@
 require "sinatra/base"
 require "sequel"
 require "rocketeer"
+require "redcarpet"
 require "roadmap/version"
 require "roadmap/theme"
 require "roadmap/themes/default"
@@ -29,8 +30,10 @@ require "roadmap/language/translation"
 require "roadmap/translations/enAU"
 
 # Helpers
+require "roadmap/helpers/formatting"
 require "roadmap/helpers/languages"
 require "roadmap/helpers/roadmap"
+require "roadmap/helpers/time"
 require "roadmap/helpers/views"
 
 # Routes
@@ -41,6 +44,7 @@ require "roadmap/routes/projects"
 require "roadmap/app"
 
 module Roadmap
+  MARKDOWN = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true)
   class << self
     ##
     # Starts Sinatra

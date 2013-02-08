@@ -1,6 +1,6 @@
 #
 # Roadmap
-# Copyright (C) 2012 Jack Polgar
+# Copyright (C) 2012-2013 J. Polgar
 # https://github.com/nirix
 #
 # Roadmap is free software: you can redistribute it and/or modify
@@ -16,14 +16,45 @@
 # along with Roadmap. If not, see <http://www.gnu.org/licenses/>.
 #
 
-helpers do
-  def render_partial(template, args = {})
-    template_array = template.to_s.split('/')
-    template = template_array[0..-2].join('/') + "/_#{template_array[-1]}"
-    erb(template.to_sym, :locals => args, :layout => false)
-  end
+module Roadmap
+  module Helpers
+    ##
+    # Easily render a view.
+    #
+    # @param [Symbol] view    The view the load
+    # @param [Hash]   options Options for the view
+    #
+    # @return [String]
+    #
+    def view(view, options = {})
+      options[:layout].to_sym if options[:layout]
+      Roadmap::Core.set :views => Theme[setting(:theme)].dir
+      erb "#{view.to_sym}".to_sym, {:layout => :"layouts/default"}.merge(options)
+    end
 
-  def show_errors(errors)
-    render_partial('errors/error_list', errors: errors) if errors.count > 0
+    ##
+    # Render a partial view.
+    #
+    # @param [Symbol] view Partial to render
+    # @param [Hash]   vars Variables to pass to the view
+    #
+    # @return [String]
+    #
+    def render_partial(view, vars = {})
+      template_array = view.to_s.split('/')
+      view = template_array[0..-2].join('/') + "/_#{template_array[-1]}"
+      erb(view.to_sym, :locals => vars, :layout => false)
+    end
+
+    ##
+    # Renders the error list partial.
+    #
+    # @param [Array] errors
+    #
+    # @return [String]
+    #
+    def show_errors(errors)
+      render_partial('errors/error_list', errors: errors) if errors.count > 0
+    end
   end
 end
