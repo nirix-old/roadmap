@@ -41,7 +41,6 @@ module Roadmap
       #
       def can?(action, project_id = nil)
         project_id = @current_project.id if project_id.nil?
-        puts group.name
         Permission.can?(group, project_id, action)
       end
 
