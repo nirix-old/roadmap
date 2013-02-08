@@ -33,6 +33,10 @@ module Roadmap
 
       before '/:project_slug' do
         @current_project = Project.where(slug: params[:project_slug]).first
+
+        if @current_project
+          @current_project = false if !@current_user.can?(:view, @current_project.id)
+        end
       end
     end
   end

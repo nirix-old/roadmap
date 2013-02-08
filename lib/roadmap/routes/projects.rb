@@ -27,7 +27,7 @@ module Roadmap
 
       # View project page
       get '/:project_slug' do
-        pass unless @current_project and @current_user.can?(:view, @current_project.id)
+        pass if !current_project
         view "projects/view"
       end
     end
