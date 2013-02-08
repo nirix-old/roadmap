@@ -28,4 +28,6 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency 'sass', '~> 3.2.5'
   gem.add_development_dependency 'bacon', '~> 1.2.0'
+  gem.add_development_dependency 'listen', '~> 0.7.2'
+  gem.add_development_dependency 'rb-fsevent', '~> 0.9.3'
 end
