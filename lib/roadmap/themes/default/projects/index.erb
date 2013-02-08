@@ -1,7 +1,7 @@
 <div class="projects content">
 	<h2 class="page_title"><%=t :projects %></h2>
 	<ul id="projects">
-	<% @projects.each do |project| %>
+	<% @projects.each do |project| next if !current_user.can?(:view, project.id) %>
 		<li class="project">
 			<h3><%=link_to project.name, project.href %></h3>
 		</li>
