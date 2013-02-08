@@ -26,6 +26,7 @@ require "roadmap/helpers/roadmap"
 require "roadmap/helpers/views"
 require "roadmap/core"
 require "roadmap/routes/base"
+require "roadmap/routes/errors"
 require "roadmap/routes/projects"
 require "roadmap/app"
 

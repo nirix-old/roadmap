@@ -17,13 +17,12 @@
 #
 
 module Roadmap
-  ##
-  # The "App" class that pulls the routes
-  # into one class so they can be found when
-  # App.run! is called.
-  #
-  class App < Core
-    use Routes::Projects
-    use Routes::Errors
+  module Routes
+    class Errors < Base
+      # 404 page
+      not_found do
+        view "errors/404"
+      end
+    end
   end
 end
