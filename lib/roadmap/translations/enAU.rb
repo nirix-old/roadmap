@@ -39,6 +39,7 @@ module Roadmap
         t['password']  = "Password"
         t['email']     = "Email"
         t['full_name'] = "Full name"
+        t['guest']     = "Guest"
 
         # Global
         t['admincp']          = "AdminCP"
@@ -66,6 +67,9 @@ module Roadmap
 
         # Errors
         t['errors.invalid_username_or_password'] = "Invalid username and/or password"
+        t['errors.404.title'] = "He's dead, Jim!"
+        t['errors.404.title.serious'] = "Not Found"
+        t['errors.404.message'] = "The page you're looking for... well, it's not here, sorry."
       end
     end
   end
