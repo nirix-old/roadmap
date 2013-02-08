@@ -1,6 +1,6 @@
 #
 # Roadmap
-# Copyright (C) 2012 Nirix
+# Copyright (C) 2012-2013 J. Polgar
 # https://github.com/nirix
 #
 # Roadmap is free software: you can redistribute it and/or modify
@@ -16,12 +16,20 @@
 # along with Roadmap. If not, see <http://www.gnu.org/licenses/>.
 #
 
-get '/' do
-  @projects = Project.all
-  view 'projects/index'
-end
+module Roadmap
+  module Routes
+    class Projects < Base
+      # Index page
+      get '/' do
+        @projects = Project.all
+        view "projects/index"
+      end
 
-get '/:project_slug' do
-  pass if not Project.is_project(params[:project_slug])
-  view 'projects/view'
+      # View project page
+      get '/:project_slug' do
+        pass unless @current_project
+        view "projects/view"
+      end
+    end
+  end
 end
