@@ -22,6 +22,13 @@ module Roadmap
       before do
         title setting(:title)
         set_translation setting(:language)
+
+        # Get user
+        if session[:user_id]
+          @current_user = User.find(id: session[:user_id])
+        else
+          @current_user = User.new(username: t(:guest), group_id: 3)
+        end
       end
 
       before '/:project_slug' do

@@ -36,7 +36,7 @@ module Roadmap
     #
     # @param [Symbol] setting
     #
-    # @return mixed
+    # @return [Mixed]
     #
     def setting(setting)
       setting = setting.to_s
@@ -44,9 +44,18 @@ module Roadmap
     end
 
     ##
+    # Returns the current users model.
+    #
+    # @return [Object]
+    #
+    def current_user
+      @current_user
+    end
+
+    ##
     # Returns the current projects model.
     #
-    # @return [Roadmap::Models::Project]
+    # @return [Object]
     #
     def current_project
       @current_project
