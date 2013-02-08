@@ -38,8 +38,11 @@ module Roadmap
       def database=(database)
         @database = database
 
+        require "roadmap/models/group"
+        require "roadmap/models/permission"
         require "roadmap/models/project"
         require "roadmap/models/setting"
+        require "roadmap/models/user"
 
         include Models
       end
