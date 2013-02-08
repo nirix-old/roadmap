@@ -22,8 +22,18 @@ require "rocketeer"
 require "roadmap/version"
 require "roadmap/theme"
 require "roadmap/themes/default"
+require "roadmap/language"
+require "roadmap/language/translation"
+
+# Translations
+require "roadmap/translations/enAU"
+
+# Helpers
+require "roadmap/helpers/languages"
 require "roadmap/helpers/roadmap"
 require "roadmap/helpers/views"
+
+# Routes
 require "roadmap/core"
 require "roadmap/routes/base"
 require "roadmap/routes/errors"
