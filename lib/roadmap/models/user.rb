@@ -31,6 +31,16 @@ module Roadmap
       end
 
       ##
+      # Returns true if the user belongs to a group
+      # with admin permissions, false if not.
+      #
+      # @return [Boolean]
+      #
+      def admin?
+        group.admin?
+      end
+
+      ##
       # Checks if the user has permission to perform
       # the specified action.
       #

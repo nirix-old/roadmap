@@ -19,6 +19,15 @@
 module Roadmap
   module Models
     class Group < Sequel::Model
+      ##
+      # Returns true if the group is an admin group
+      # false if not.
+      #
+      # @return [Boolean]
+      #
+      def admin?
+        self.is_admin == 1 or self.is_admin == true
+      end
     end
   end
 end
