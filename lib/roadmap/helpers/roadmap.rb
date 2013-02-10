@@ -60,5 +60,15 @@ module Roadmap
     def current_project
       @current_project
     end
+
+    ##
+    # Returns true if the user is logged in
+    # or false if not.
+    #
+    # @return [Boolean]
+    #
+    def logged_in?
+      session.key?(:user_id)
+    end
   end
 end
