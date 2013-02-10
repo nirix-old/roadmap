@@ -1,0 +1,29 @@
+label {
+  font-weight: bold;
+}
+
+.error, .success, .notice, .info {
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+form {
+  .actions {
+    text-align: center;
+    padding: 4px 0;
+  }
+
+  abbr {
+    border-radius: 15px;
+    background: #d5edf8;
+    color: #205791;
+    border: 1px solid #92cae4;
+    padding: 0 5px;
+    cursor: default;
+  }
+}
+
+button, input[type=submit], input[type=reset] {
+  cursor: default;
+}

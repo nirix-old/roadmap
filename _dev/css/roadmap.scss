@@ -1,0 +1,80 @@
+@import "bootstrap";
+@import "bootstrip";
+
+#header {
+  background-image: linear-gradient(bottom, #316279 0%, #4F96B5 100%);
+  background-image: -o-linear-gradient(bottom, #316279 0%, #4F96B5 100%);
+  background-image: -moz-linear-gradient(bottom, #316279 0%, #4F96B5 100%);
+  background-image: -webkit-linear-gradient(bottom, #316279 0%, #4F96B5 100%);
+  background-image: -ms-linear-gradient(bottom, #316279 0%, #4F96B5 100%);
+
+  a {
+    color: #fff;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  h1 {
+    padding-top: 2px;
+    float: left;
+    font-size: 26px;
+    margin: 0;
+  }
+
+  #nav {
+    float: right;
+    margin-top: 18px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 0;
+        padding: 0;
+      display: inline;
+
+        a {
+          display: block;
+          float: left;
+          padding: 4px 8px;
+
+          &:hover {
+            color: #000;
+            background: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.box {
+  background: #F6F6F6;
+  border: 1px solid #e4e4e4;
+  padding: 5px;
+  line-height: 1.5em;
+  border-radius: 5px;
+
+  .control-group {
+    &:first-child {
+      margin-top: 10px;
+    }
+  }
+
+  .col1 {
+    float: left;
+    width: 49%;
+  }
+
+  .col2 {
+    float: right;
+    width: 49%;
+  }
+}
+
+@import "buttons";
+@import "forms";
