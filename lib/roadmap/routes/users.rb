@@ -1,6 +1,6 @@
 #
 # Roadmap
-# Copyright (C) 2012 Nirix
+# Copyright (C) 2012-2013 J. Polgar
 # https://github.com/nirix
 #
 # Roadmap is free software: you can redistribute it and/or modify
@@ -16,37 +16,60 @@
 # along with Roadmap. If not, see <http://www.gnu.org/licenses/>.
 #
 
-get '/login' do
-  view 'users/login'
-end
+module Roadmap
+  module Routes
+    class Users < Base
+      # Set login page title
+      before '/login' do
+        title t(:login)
+      end
 
-post '/login' do
-  if u = User.check_credentials(params[:user][:username], params[:user][:password])
-    session[:user_id] = u.id
-    redirect '/'
-  else
-    @error = true
-    view 'users/login'
-  end
-end
+      # Set register page title
+      before '/register' do
+        title t(:register)
+      end
 
-get '/register' do
-  @user = User.new
-  view 'users/register'
-end
+      # Login page
+      get '/login' do
+        view "users/login"
+      end
 
-post '/register' do
-  #@user = User.new {
-  #  :username => params[:user][:username],
-  #  :password => params[:user][:password],
-  #  :email => params[:user][:email]
-  #}
+      # Create session
+      post '/login' do
+        # Check username and password
+        if user = User.check_credentials(params[:username], params[:password])
+          session[:user_id] = user.id
+          redirect '/'
+        else
+          @error = true
+          view "users/login"
+        end
+      end
 
-  if @user.valid?
-    @user.save
-    flash[:success] = t(:registration_successfull)
-    redirect '/login'
-  else
-    view 'users/register'
-  end
-end
+      # Register page
+      get '/register' do
+        @user = User.new
+        view "users/register"
+      end
+
+      # Create user
+      post '/register' do
+        # Set user info
+        @user = User.new({
+          username: params[:user][:username],
+          password: params[:user][:password],
+          email:    params[:user][:email],
+          name:     params[:user][:name],
+        })
+
+        # Save user and redirect if valid
+        if @user.valid?
+          @user.save
+          redirect '/'
+        else
+          view "users/register"
+        end
+      end
+    end # Users
+  end # Routes
+end # Roadmap
