@@ -67,6 +67,11 @@ module Roadmap
         false
       end
 
+      def before_create
+        self.password = BCrypt::Password.create(self.password)
+        super
+      end
+
       def validate
         super
         validates_presence [:username, :password, :email]
