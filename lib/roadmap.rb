@@ -20,6 +20,8 @@ require "sinatra/base"
 require "sequel"
 require "rocketeer"
 require "redcarpet"
+require "bcrypt"
+
 require "roadmap/version"
 require "roadmap/theme"
 require "roadmap/themes/default"
