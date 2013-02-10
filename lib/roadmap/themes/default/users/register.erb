@@ -11,19 +11,19 @@
 							<%=text_field [:user, :name] %>
 						</div>
 					</div>
-					<div class="control-group">
+					<div class="control-group<%= if @user.errors.key?(:username) then ' error' end %>">
 						<%=label t(:username), for: [:user, :username], class: 'control-label' %>
 						<div class="controls">
 							<%=text_field [:user, :username] %>
 						</div>
 					</div>
-					<div class="control-group">
+					<div class="control-group<%= if @user.errors.key?(:password) then ' error' end %>">
 						<%=label t(:password), for: [:user, :password], class: 'control-label' %>
 						<div class="controls">
 							<%=password_field [:user, :password] %>
 						</div>
 					</div>
-					<div class="control-group">
+					<div class="control-group<%= if @user.errors.key?(:email) then ' error' end %>">
 						<%=label t(:email), for: [:user, :email], class: 'control-label' %>
 						<div class="controls">
 							<%=email_field [:user, :email] %>
