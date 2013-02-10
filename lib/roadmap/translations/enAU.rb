@@ -34,6 +34,7 @@ module Roadmap
         # Users
         t['login']     = "Login"
         t['logout']    = "Logout"
+        t['usercp']    = "UserCP"
         t['register']  = "Register"
         t['name']      = "Name"
         t['username']  = "Username"
@@ -41,6 +42,7 @@ module Roadmap
         t['email']     = "Email"
         t['full_name'] = "Full name"
         t['guest']     = "Guest"
+        t['logout_successful'] = "Successfully logged out"
 
         # Global
         t['admincp']          = "AdminCP"
@@ -49,6 +51,7 @@ module Roadmap
         t['issues']           = "Issues"
         t['roadmap']          = "Roadmap"
         t['timeline']         = "Timeline"
+        t['info']             = "Info"
 
         # Issues
         t['description']      = "Description"

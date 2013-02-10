@@ -20,6 +20,12 @@
 						<li><%=link_to t(:register), '/register' %></li>
 					<% end %>
 					</ul>
+					<% if current_project %>
+					<ul>
+						<li><%=link_to t(:info), current_project %></li>
+						<li><%=link_to t(:issues), current_project.href('issues') %></li>
+					</ul>
+					<% end %>
 				</div>
 			</div>
 		</div>
