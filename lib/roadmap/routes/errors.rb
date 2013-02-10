@@ -21,6 +21,7 @@ module Roadmap
     class Errors < Base
       # 404 page
       not_found do
+        title t('errors.404.title.serious')
         view "errors/404"
       end
     end
