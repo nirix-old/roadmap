@@ -21,16 +21,20 @@
     float: left;
     font-size: 26px;
     margin: 0;
+    margin-right: 15px;
   }
 
   #nav {
-    float: right;
     margin-top: 18px;
 
     ul {
       margin: 0;
       padding: 0;
       list-style: none;
+
+      &.meta {
+        float: right;
+      }
 
       li {
         margin: 0;
