@@ -44,6 +44,11 @@ require "roadmap/routes/projects"
 require "roadmap/routes/users"
 require "roadmap/app"
 
+# Setup Sequel
+Sequel::Model.plugin(:validation_helpers)
+Sequel.extension(:pagination)
+Sequel.extension(:inflector)
+
 module Roadmap
   MARKDOWN = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true)
   class << self
