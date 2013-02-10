@@ -70,6 +70,13 @@ module Roadmap
           view "users/register"
         end
       end
+
+      # Logout
+      get '/logout' do
+        session.delete(:user_id) if session.key?(:user_id)
+        flash[:success] = t(:logout_successful)
+        redirect '/'
+      end
     end # Users
   end # Routes
 end # Roadmap
