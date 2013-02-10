@@ -50,7 +50,7 @@ module Roadmap
       # @return [Boolean]
       #
       def check_password(pass)
-        BCrypt::Password.new(pass) == password
+        BCrypt::Password.new(password) == pass
       end
 
       ##
@@ -61,7 +61,7 @@ module Roadmap
       #
       def self.check_credentials(user, pass)
         if user = find(username: user) and user.check_password(pass)
-          u
+          return user
         end
 
         false
