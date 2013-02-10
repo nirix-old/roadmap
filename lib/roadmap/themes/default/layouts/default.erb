@@ -10,8 +10,13 @@
 				<h1><%=link_to setting(:title), '/' %></h1>
 				<div id="nav">
 					<ul class="meta">
+					<% if logged_in? %>
+						<li><%=link_to t(:usercp), '/usercp' %></li>
+						<li><%=link_to t(:logout), '/logout' %></li>
+					<% else %>
 						<li><%=link_to t(:login), '/login' %></li>
 						<li><%=link_to t(:register), '/register' %></li>
+					<% end %>
 					</ul>
 				</div>
 			</div>
