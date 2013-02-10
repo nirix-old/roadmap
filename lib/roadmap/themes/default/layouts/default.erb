@@ -22,7 +22,7 @@
 					</ul>
 					<% if current_project %>
 					<ul>
-						<li><%=link_to t(:info), current_project %></li>
+						<li><%=link_to t(:info), current_project.href %></li>
 						<li><%=link_to t(:issues), current_project.href('issues') %></li>
 					</ul>
 					<% end %>
