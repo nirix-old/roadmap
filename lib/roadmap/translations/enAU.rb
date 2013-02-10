@@ -35,6 +35,7 @@ module Roadmap
         t['login']     = "Login"
         t['logout']    = "Logout"
         t['register']  = "Register"
+        t['name']      = "Name"
         t['username']  = "Username"
         t['password']  = "Password"
         t['email']     = "Email"

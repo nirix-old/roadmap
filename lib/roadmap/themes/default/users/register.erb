@@ -1,0 +1,39 @@
+<div class="register content">
+	<form action="/register" method="post" class="form-horizontal">
+		<div class="row">
+			<div class="span6 centered">
+				<h2 class="page_title"><%=t :register %></h2>
+				<%=show_errors @user.errors.full_messages %>
+				<div class="box">
+					<div class="control-group">
+						<%=label t(:name), for: [:user, :name], class: 'control-label' %>
+						<div class="controls">
+							<%=text_field [:user, :name] %>
+						</div>
+					</div>
+					<div class="control-group">
+						<%=label t(:username), for: [:user, :username], class: 'control-label' %>
+						<div class="controls">
+							<%=text_field [:user, :username] %>
+						</div>
+					</div>
+					<div class="control-group">
+						<%=label t(:password), for: [:user, :password], class: 'control-label' %>
+						<div class="controls">
+							<%=password_field [:user, :password] %>
+						</div>
+					</div>
+					<div class="control-group">
+						<%=label t(:email), for: [:user, :email], class: 'control-label' %>
+						<div class="controls">
+							<%=email_field [:user, :email] %>
+						</div>
+					</div>
+					<div class="actions">
+						<%=submit_button t(:register), class: 'btn btn-success' %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
