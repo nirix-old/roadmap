@@ -76,5 +76,14 @@
   }
 }
 
+#page {
+  margin: 10px 0;
+
+  .page_title {
+    margin-top: 0;
+    line-height: 1;
+  }
+}
+
 @import "buttons";
 @import "forms";
