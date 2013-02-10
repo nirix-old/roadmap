@@ -8,13 +8,13 @@
 					<div class="control-group">
 						<%=label t(:name), for: [:user, :name], class: 'control-label' %>
 						<div class="controls">
-							<%=text_field [:user, :name] %>
+							<%=text_field [:user, :name], value: @user.name %>
 						</div>
 					</div>
 					<div class="control-group<%= if @user.errors.key?(:username) then ' error' end %>">
 						<%=label t(:username), for: [:user, :username], class: 'control-label' %>
 						<div class="controls">
-							<%=text_field [:user, :username] %>
+							<%=text_field [:user, :username], value: @user.username %>
 						</div>
 					</div>
 					<div class="control-group<%= if @user.errors.key?(:password) then ' error' end %>">
@@ -26,7 +26,7 @@
 					<div class="control-group<%= if @user.errors.key?(:email) then ' error' end %>">
 						<%=label t(:email), for: [:user, :email], class: 'control-label' %>
 						<div class="controls">
-							<%=email_field [:user, :email] %>
+							<%=email_field [:user, :email], value: @user.email %>
 						</div>
 					</div>
 					<div class="actions">
