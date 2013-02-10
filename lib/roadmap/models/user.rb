@@ -66,6 +66,12 @@ module Roadmap
 
         false
       end
+
+      def validate
+        super
+        validates_presence [:username, :password, :email]
+        validates_unique [:username, :email]
+      end
     end
   end
 end
