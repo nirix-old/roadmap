@@ -21,11 +21,16 @@ module Roadmap
   class Core < Sinatra::Base
     attr_accessor :database
 
+    # Helpers
     helpers Helpers
     helpers Rocketeer::Helpers::HTML
     helpers Rocketeer::Helpers::Form
     helpers Rocketeer::Helpers::Text
 
+    # Flash messages
+    use Rack::Flash, :sweep => true
+
+    # Set root and enable static files
     set root: ROADMAP_DIR
     enable :static
 

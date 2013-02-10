@@ -21,6 +21,7 @@ require "sequel"
 require "rocketeer"
 require "redcarpet"
 require "bcrypt"
+require "rack-flash"
 
 require "roadmap/version"
 require "roadmap/theme"
