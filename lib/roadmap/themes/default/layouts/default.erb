@@ -13,6 +13,9 @@
 				<div id="nav">
 					<ul class="meta">
 					<% if logged_in? %>
+						<% if current_user.admin? %>
+						<li><%=link_to t(:admincp), '/admin' %></li>
+						<% end %>
 						<li><%=link_to t(:usercp), '/usercp' %></li>
 						<li><%=link_to t(:logout), '/logout' %></li>
 					<% else %>
