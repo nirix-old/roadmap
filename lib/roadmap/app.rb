@@ -23,7 +23,8 @@ module Roadmap
   # App.run! is called.
   #
   class App < Core
-    use Routes::Projects
     use Routes::Errors
+    use Routes::Projects
+    use Routes::Users
   end
 end

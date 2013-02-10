@@ -41,6 +41,7 @@ require "roadmap/core"
 require "roadmap/routes/base"
 require "roadmap/routes/errors"
 require "roadmap/routes/projects"
+require "roadmap/routes/users"
 require "roadmap/app"
 
 module Roadmap
