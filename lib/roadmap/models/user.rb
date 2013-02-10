@@ -72,6 +72,11 @@ module Roadmap
         super
       end
 
+      def before_save
+        self.name = self.username if self.name.empty?
+        super
+      end
+
       def validate
         super
         validates_presence [:username, :password, :email]
