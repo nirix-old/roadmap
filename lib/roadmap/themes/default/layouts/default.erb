@@ -23,6 +23,12 @@
 		</div>
 		<div id="page">
 			<div class="container">
+			<% if flash[:success] %>
+				<div class="alert alert-success">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<%=flash[:success]%>
+				</div>
+			<% end %>
 				<%=yield%>
 			</div>
 		</div>
