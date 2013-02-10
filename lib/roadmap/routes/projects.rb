@@ -28,6 +28,7 @@ module Roadmap
       # View project page
       get '/:project_slug' do
         pass if !current_project
+        title current_project.name
         view "projects/view"
       end
     end
