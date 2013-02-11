@@ -31,11 +31,11 @@ module Roadmap
         end
       end
 
-      before '/:project_slug' do
+      before '/:project_slug*' do
         @current_project = Project.where(slug: params[:project_slug]).first
 
-        if @current_project
-          @current_project = false if !@current_user.can?(:view, @current_project.id)
+        if @current_project and !@current_user.can?(:view, @current_project.id)
+          error 403, view('errors/no_permission')
         end
       end
     end
