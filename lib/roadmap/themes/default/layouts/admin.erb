@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<%=render_partial 'layouts/head' %>
+	</head>
+	<body>
+		<div id="header">
+			<div class="container">
+				<h1><%=link_to t(:admincp), '/admincp' %></h1>
+				<div id="nav">
+				<% if current_user.admin? %>
+					<ul class="meta">
+						<li><%=link_to setting(:title), '/' %></li>
+						<li><%=link_to t(:usercp), '/usercp' %></li>
+						<li><%=link_to t(:logout), '/logout' %></li>
+					</ul>
+					<ul>
+						<li><%=link_to t(:projects), '/admin/projects' %></li>
+					</ul>
+				<% end %>
+				</div>
+			</div>
+		</div>
+		<div id="page">
+			<div class="container">
+				<%=render_partial 'layouts/flash_messages' %>
+				<%=yield%>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="container">
+				<%=t :copyright %>
+			</div>
+		</div>
+	</body>
+</html>

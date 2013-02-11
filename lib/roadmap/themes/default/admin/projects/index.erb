@@ -1,0 +1,25 @@
+<div class="admin projects listing content">
+	<div class="page-actions">
+		<%=link_to t(:new_project), '/admin/projects/new', class: 'btn-new' %>
+	</div>
+	<h2 class="page-title"><%=t :projects %></h2>
+	<table class="listing table table-striped table-hover">
+		<thead>
+			<tr>
+				<th class="name"><%=t :name %></th>
+				<th class="actions"><%=t :actions %></th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @projects.each do |p| %>
+			<tr>
+				<td><%=link_to p.name, p.href(:settings) %></td>
+				<td>
+					<%=link_to t(:edit), p.href(:settings), class: 'btn-edit' %>
+					<%=link_to t(:delete), "/admin/projects/#{p.id}/delete", class: 'btn-delete' %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>

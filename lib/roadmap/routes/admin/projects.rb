@@ -17,16 +17,30 @@
 #
 
 module Roadmap
-  ##
-  # The "App" class that pulls the routes
-  # into one class so they can be found when
-  # App.run! is called.
-  #
-  class App < Core
-    use Routes::Admin::Dashboard
-    use Routes::Admin::Projects
-    use Routes::Errors
-    use Routes::Projects
-    use Routes::Users
-  end
-end
+  module Routes
+    module Admin
+      class Projects < Base
+        before '/admin/projects*' do
+          title t(:projects)
+        end
+
+        # Project listing
+        get '/admin/projects' do
+          @projects = Project.all
+          view 'admin/projects/index'
+        end
+
+        # New project
+        get '/admin/projects/new' do
+          @project = Project.new
+          view 'admin/projects/new'
+        end
+
+        # Create project
+        post '/admin/projects/new' do
+
+        end
+      end # Projects
+    end # Admin
+  end # Routes
+end # Roadmap

@@ -17,16 +17,21 @@
 #
 
 module Roadmap
-  ##
-  # The "App" class that pulls the routes
-  # into one class so they can be found when
-  # App.run! is called.
-  #
-  class App < Core
-    use Routes::Admin::Dashboard
-    use Routes::Admin::Projects
-    use Routes::Errors
-    use Routes::Projects
-    use Routes::Users
-  end
-end
+  module Routes
+    module Admin
+      class Base < Roadmap::Routes::Base
+        before '/admin*' do
+          title t(:admin)
+
+          Roadmap.set layout: 'admin'
+
+          if !current_user.admin?
+            flash[:error] = t('error.no_permission.title')
+            redirect '/login'
+            halt
+          end
+        end
+      end # Base
+    end # Admin
+  end # Routes
+end # Roadmap
