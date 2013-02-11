@@ -29,7 +29,7 @@ module Roadmap
     def view(view, options = {})
       options[:layout].to_sym if options[:layout]
       Roadmap::Core.set :views => Theme[setting(:theme)].dir
-      erb "#{view.to_sym}".to_sym, {:layout => :"layouts/default"}.merge(options)
+      erb "#{view.to_sym}".to_sym, {:layout => :"layouts/#{settings.layout}"}.merge(options)
     end
 
     ##

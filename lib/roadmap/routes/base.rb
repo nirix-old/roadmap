@@ -23,6 +23,8 @@ module Roadmap
         title setting(:title)
         set_translation setting(:language)
 
+        Roadmap.set layout: 'default'
+
         # Get user
         if session[:user_id]
           @current_user = User.find(id: session[:user_id])

@@ -75,5 +75,14 @@ module Roadmap
         expire_after: 13000000
       }
     end
+
+    ##
+    # Set a setting
+    #
+    # @param [Hash] setting
+    #
+    def set(setting)
+      Core.set setting
+    end
   end
 end
