@@ -1,5 +1,5 @@
 <div class="projects content">
-	<h2 class="page_title"><%=t :projects %></h2>
+	<h2 class="page-title"><%=t :projects %></h2>
 	<ul id="projects">
 	<% @projects.each do |project| next if !current_user.can?(:view, project.id) %>
 		<li class="project">
