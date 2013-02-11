@@ -45,13 +45,18 @@ module Roadmap
         t['logout_successful'] = "Successfully logged out"
 
         # Global
-        t['admincp']          = "AdminCP"
-        t['activity']         = "Activity"
-        t['projects']         = "Projects"
-        t['issues']           = "Issues"
-        t['roadmap']          = "Roadmap"
-        t['timeline']         = "Timeline"
-        t['info']             = "Info"
+        t['admincp']  = "AdminCP"
+        t['activity'] = "Activity"
+        t['projects'] = "Projects"
+        t['issues']   = "Issues"
+        t['roadmap']  = "Roadmap"
+        t['timeline'] = "Timeline"
+        t['info']     = "Info"
+        t['admin']    = "Admin"
+        t['actions']  = "Actions"
+        t['new']      = "New"
+        t['edit']     = "Edit"
+        t['delete']   = "Delete"
 
         # Issues
         t['description']      = "Description"
@@ -68,6 +73,9 @@ module Roadmap
         t['never']            = "Never"
         t['x_open']           = "{1} Open"
         t['type']             = "Type"
+
+        # Admin
+        t['new_project'] = "New Project"
 
         # Errors
         t['errors.invalid_username_or_password'] = "Invalid username and/or password"
