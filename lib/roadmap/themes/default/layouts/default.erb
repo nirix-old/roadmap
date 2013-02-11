@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><%= title.join ' / ' %></title>
-		<%=js_inc_tag '//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js' %>
-		<%=js_inc_tag '/assets/js/bootstrap.min.js' %>
-		<%=css_link_tag '/assets/css/roadmap.css' %>
+<%=render_partial 'layouts/head' %>
 	</head>
 	<body>
 		<div id="header">
