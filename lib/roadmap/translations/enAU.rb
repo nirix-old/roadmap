@@ -94,6 +94,8 @@ module Roadmap
         t['errors.404.title'] = "He's dead, Jim!"
         t['errors.404.title.serious'] = "Not Found"
         t['errors.404.message'] = "The page you're looking for... well, it's not here, sorry."
+        t['errors.x_is_not_present'] = "{1} is not present"
+        t['errors.x_is_already_taken'] = "{1} is already taken"
       end
     end
   end
