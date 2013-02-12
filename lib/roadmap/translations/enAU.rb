@@ -57,6 +57,8 @@ module Roadmap
         t['new']      = "New"
         t['edit']     = "Edit"
         t['delete']   = "Delete"
+        t['slug']     = "Slug"
+        t['create']   = "Create"
 
         # Issues
         t['description']      = "Description"
@@ -76,6 +78,16 @@ module Roadmap
 
         # Admin
         t['new_project'] = "New Project"
+
+        # Project settings
+        t['enable_wiki'] = "Enable wiki"
+
+        # Placeholders
+        t['placeholder.new_project.name'] = "My Project"
+        t['placeholder.new_project.slug'] = "my-project"
+
+        # Help
+        t['help.slug'] = "URL safe string."
 
         # Errors
         t['errors.invalid_username_or_password'] = "Invalid username and/or password"
