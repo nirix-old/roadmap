@@ -1,6 +1,7 @@
 <div class="new project content">
 	<h2 class="page-title"><%=t :new_project %></h2>
 	<form action="/admin/projects/new" method="post">
+		<%=show_errors @project.errors %>
 		<div class="form-horizontal box">
 			<%=render_partial 'admin/projects/form' %>
 			<div class="actions">

@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="span6 centered">
 				<h2 class="page-title"><%=t :register %></h2>
-				<%=show_errors @user.errors.full_messages %>
+				<%=show_errors @user.errors %>
 				<div class="box">
 					<div class="control-group">
 						<%=label t(:name), for: [:user, :name], class: 'control-label' %>

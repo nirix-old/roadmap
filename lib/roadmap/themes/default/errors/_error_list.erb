@@ -1,7 +1,11 @@
 <div class="alert alert-error">
 	<ul>
 	<% errors.each do |e| %>
+		<% if e.is_a?(Array) %>
+		<li><%=t "errors.x_#{e[1][0].gsub(' ', '_')}", t(e[0]) %></li>
+		<% else %>
 		<li><%=e%></li>
+		<% end %>
 	<% end %>
 	</ul>
 </div>
