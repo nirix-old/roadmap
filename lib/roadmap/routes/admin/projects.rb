@@ -38,7 +38,19 @@ module Roadmap
 
         # Create project
         post '/admin/projects/new' do
+          @project = Project.new({
+            name: params[:project][:name],
+            slug: params[:project][:slug],
+            description: params[:project][:description],
+            enable_wiki: params[:project][:enable_wiki] || 0
+          })
 
+          if @project.valid?
+            @project.save
+            redirect '/admin/projects'
+          end
+
+          view 'admin/projects/new'
         end
       end # Projects
     end # Admin
