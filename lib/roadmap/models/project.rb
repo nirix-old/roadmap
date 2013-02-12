@@ -29,6 +29,11 @@ module Roadmap
       def href(uri = nil)
         slug + (!uri.nil? ? "/#{uri}" :'')
       end
+
+      def validate
+        validates_presence [:name, :slug]
+        validates_unique [:slug]
+      end
     end
   end
 end
