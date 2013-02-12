@@ -1,0 +1,11 @@
+<div class="new project content">
+	<h2 class="page-title"><%=t :new_project %></h2>
+	<form action="/admin/projects/new" method="post">
+		<div class="form-horizontal box">
+			<%=render_partial 'admin/projects/form' %>
+			<div class="actions">
+				<%=submit_button t(:create), class: 'btn btn-success' %>
+			</div>
+		</div>
+	</form>
+</div>

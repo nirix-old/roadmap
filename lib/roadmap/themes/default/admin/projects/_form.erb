@@ -1,0 +1,25 @@
+<div class="control-group">
+	<%=label t(:name), for: [:project, :name], class: 'control-label' %>
+	<div class="controls">
+		<%=text_field [:project, :name], value: @project.name, class: 'span9', placeholder: t('placeholder.new_project.name') %>
+	</div>
+</div>
+<div class="control-group">
+	<%=label t(:slug), for: [:project, :slug], class: 'control-label' %>
+	<div class="controls">
+		<%=text_field [:project, :slug], value: @project.slug, class: 'span9', placeholder: t('placeholder.new_project.slug') %>
+		<div class="help-inline"><abbr class="tooltipped" data-toggle="tooltip"  title="<%=t 'help.slug' %>">?</abbr></div>
+	</div>
+</div>
+<div class="control-group">
+	<%=label t(:description), for: [:project, :description], class: 'control-label' %>
+	<div class="controls">
+		<%=textarea [:project, :description], value: @project.description, class: 'span9' %>
+	</div>
+</div>
+<div class="control-group">
+	<%=label t(:enable_wiki), for: [:project, :enable_wiki], class: 'control-label' %>
+	<div class="controls">
+		<%=checkbox [:project, :enable_wiki], value: @project.enable_wiki %>
+	</div>
+</div>
