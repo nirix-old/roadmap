@@ -90,7 +90,8 @@ module Roadmap
       def validate
         super
         validates_presence [:username, :password, :email]
-        validates_unique [:username, :email]
+        validates_unique :username
+        validates_unique :email
       end
     end
   end
