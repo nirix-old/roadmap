@@ -78,6 +78,7 @@ module Roadmap
 
         # Admin
         t['new_project'] = "New Project"
+        t['project_deleted_successfully'] = "Project deleted successfully"
 
         # Project settings
         t['enable_wiki'] = "Enable wiki"

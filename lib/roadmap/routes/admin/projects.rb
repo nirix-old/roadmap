@@ -52,6 +52,13 @@ module Roadmap
 
           view 'admin/projects/new'
         end
+
+        # Delete project
+        get '/admin/projects/:id/delete' do
+          Project.find(id: params[:id]).delete
+          flash[:success] = t(:project_deleted_successfully)
+          redirect '/admin/projects'
+        end
       end # Projects
     end # Admin
   end # Routes
