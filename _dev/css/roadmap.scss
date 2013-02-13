@@ -93,6 +93,12 @@
   }
 }
 
+table {
+  .actions {
+    width: 200px;
+  }
+}
+
 @import "buttons";
 @import "forms";
 @import "projects";
