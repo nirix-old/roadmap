@@ -56,5 +56,21 @@ module Roadmap
     def show_errors(errors)
       render_partial('errors/error_list', errors: errors) if errors.count > 0
     end
+
+    ##
+    # Returns an array of themes formatted
+    # for the select helper.
+    #
+    # @return [Array]
+    #
+    def theme_select_options
+      themes = []
+
+      Roadmap::Theme::REGISTERED.each do |theme|
+        themes << [theme[0].to_s, theme[0].to_s]
+      end
+
+      themes
+    end
   end
 end
