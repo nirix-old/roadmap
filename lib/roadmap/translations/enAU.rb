@@ -59,6 +59,8 @@ module Roadmap
         t['delete']   = "Delete"
         t['slug']     = "Slug"
         t['create']   = "Create"
+        t['save']     = "Save"
+        t['reset']    = "Reset"
 
         # Issues
         t['description']      = "Description"
@@ -77,6 +79,10 @@ module Roadmap
         t['type']             = "Type"
 
         # Admin
+        t['settings']    = "Settings"
+        t['title']       = "Title"
+        t['language']    = "Language"
+        t['theme']       = "Theme"
         t['new_project'] = "New Project"
         t['project_deleted_successfully'] = "Project deleted successfully"
 
