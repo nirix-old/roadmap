@@ -29,6 +29,16 @@ module Roadmap
         get '/admin/settings' do
           view 'admin/settings/index'
         end
+
+        post '/admin/settings' do
+          params[:settings].each do |id, value|
+            s = Setting.find(id: id)
+            s.value = value
+            s.save
+          end
+
+          redirect '/admin/settings'
+        end
       end # Settings
     end # Admin
   end # Routes
