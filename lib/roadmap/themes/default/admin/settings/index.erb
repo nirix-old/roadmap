@@ -1,0 +1,25 @@
+<div class="admin settings conntent">
+	<h2 class="page-title"><%=t :settings %></h2>
+	<form action="" method="post">
+		<div class="form-horizontal box">
+		<% @settings.each do |s| %>
+			<div class="control-group">
+				<%=label t(s.setting), for: [:settings, s.id], class: 'control-label' %>
+				<div class="controls">
+				<% if s.type == 'text' %>
+					<%=text_field [:settings, s.id], value: s.value %>
+				<% elsif s.type == "language_select" %>
+					<%=select_box [:settings, s.id], language_select_options, s.value %>
+				<% elsif s.type == "theme_select" %>
+					<%=select_box [:settings, s.id], theme_select_options, s.value %>
+				<% end %>
+				</div>
+			</div>
+		<% end %>
+		<div class="actions">
+			<%=submit_button t(:save), class: 'btn btn-success' %>
+			<button type="reset" class="btn btn-inverse"><%=t :reset %></button>
+		</div>
+		</div>
+	</form>
+</div>
