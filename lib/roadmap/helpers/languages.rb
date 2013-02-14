@@ -38,5 +38,21 @@ module Roadmap
     def t(string, vars = [])
       Roadmap::Language.translate(string, vars)
     end
+
+    ##
+    # Returns an array of languages formatted
+    # for the select helper.
+    #
+    # @return [Array]
+    #
+    def language_select_options
+      languages = []
+
+      Roadmap::Language::REGISTERED.each do |language|
+        languages << [language[1].name, language[1].language]
+      end
+
+      languages
+    end
   end
 end
