@@ -84,7 +84,12 @@ module Roadmap
         t['language']    = "Language"
         t['theme']       = "Theme"
         t['new_project'] = "New Project"
+        t['types']       = "Types"
+        t['new_type']    = "New Type"
+        t['global']      = "Global"
+        t['project']     = "Project"
         t['project_deleted_successfully'] = "Project deleted successfully"
+        t['type_deleted_successfully']    = "Type deleted successfully"
 
         # Project settings
         t['enable_wiki'] = "Enable wiki"
