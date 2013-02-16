@@ -31,6 +31,21 @@ module Roadmap
           @type = Type.new({ is_global: 1 })
           view 'admin/types/new'
         end
+
+        # Create type
+        post '/admin/types/new' do
+          @type = Type.new({
+            name: params[:type][:name],
+            is_global: 1
+          })
+
+          if @type.valid?
+            @type.save
+            redirect '/admin/types'
+          end
+
+          view 'admin/types/new'
+        end
       end # Base
     end # Admin
   end # Routes
