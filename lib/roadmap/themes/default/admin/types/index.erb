@@ -1,0 +1,27 @@
+<div class="admin types listing content">
+	<div class="page-actions">
+		<%=link_to t(:new_type), '/admin/types/new', class: 'btn-new' %>
+	</div>
+	<h2 class="page-title"><%=t :types %></h2>
+	<table class="listing table table-striped table-hover">
+		<thead>
+			<tr>
+				<th class="name"><%=t :name %></th>
+				<th class="project"><%=t :project %></th>
+				<th class="actions"><%=t :actions %></th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @types.each do |type| %>
+			<tr>
+				<td><%=link_to type.name, "/admin/types/#{type.id}/edit" %></td>
+				<td></td>
+				<td>
+					<%=link_to t(:edit), "/admin/types/#{type.id}/edit", class: 'btn-edit' %>
+					<%=link_to t(:delete), "/admin/types/#{type.id}/delete", class: 'btn-delete' %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>
