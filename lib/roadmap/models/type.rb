@@ -1,6 +1,6 @@
 #
 # Roadmap
-# Copyright (C) 2012 Type
+# Copyright (C) 2012-2013 J. Polgar
 # https://github.com/nirix
 #
 # Roadmap is free software: you can redistribute it and/or modify
@@ -16,5 +16,12 @@
 # along with Roadmap. If not, see <http://www.gnu.org/licenses/>.
 #
 
-class Type < Sequel::Model
+module Roadmap
+  module Models
+    class Type < Sequel::Model
+      def validate
+        validates_presence :name
+      end
+    end
+  end
 end
