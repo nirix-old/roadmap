@@ -1,0 +1,13 @@
+<div class="control-group">
+	<%=label t(:name), for: [:type, :name], class: 'control-label' %>
+	<div class="controls">
+		<%=text_field [:type, :name], value: @type.name, class: 'span9' %>
+	</div>
+</div>
+<div class="control-group">
+	<%=label t(:global), for: [:type, :is_global], class: 'control-label' %>
+	<div class="controls">
+		<%=checkbox [:type, :is_global], value: 1, checked: @type.is_global, disabled: 1 %>
+		<div class="help-inline"><abbr class="tooltipped" data-toggle="tooltip"  title="<%=t 'help.global_type' %>">?</abbr></div>
+	</div>
+</div>

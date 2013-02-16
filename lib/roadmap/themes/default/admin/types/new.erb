@@ -1,0 +1,12 @@
+<div class="admin new type content">
+	<h2 class="page-title"><%=t :new_type %></h2>
+	<form action="/admin/types/new" method="post">
+		<%=show_errors @type.errors %>
+		<div class="form-horizontal box">
+			<%=render_partial 'admin/types/form' %>
+			<div class="actions">
+				<%=submit_button t(:create), class: 'btn btn-success' %>
+			</div>
+		</div>
+	</form>
+</div>
