@@ -65,6 +65,13 @@ module Roadmap
 
           view 'admin/types/edit'
         end
+
+        # Delete type
+        get '/admin/types/:id/delete' do
+          @type = Type.find(id: params[:id]).delete
+          flash[:success] = t(:type_deleted_successfully)
+          redirect '/admin/types'
+        end
       end # Base
     end # Admin
   end # Routes
