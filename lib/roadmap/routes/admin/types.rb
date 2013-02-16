@@ -46,6 +46,25 @@ module Roadmap
 
           view 'admin/types/new'
         end
+
+        # Edit type
+        get '/admin/types/:id/edit' do
+          @type = Type.find(id: params[:id])
+          view 'admin/types/edit'
+        end
+
+        # Save type
+        post '/admin/types/:id/edit' do
+          @type = Type.find(id: params[:id])
+          @type.name = params[:type][:name]
+
+          if @type.valid?
+            @type.save
+            redirect '/admin/types'
+          end
+
+          view 'admin/types/edit'
+        end
       end # Base
     end # Admin
   end # Routes
