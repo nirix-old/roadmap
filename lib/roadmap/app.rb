@@ -26,6 +26,7 @@ module Roadmap
     use Routes::Admin::Dashboard
     use Routes::Admin::Projects
     use Routes::Admin::Settings
+    use Routes::Admin::Types
     use Routes::Errors
     use Routes::Projects
     use Routes::Users

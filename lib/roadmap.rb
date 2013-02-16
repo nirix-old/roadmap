@@ -49,6 +49,7 @@ require "roadmap/routes/admin/base"
 require "roadmap/routes/admin/dashboard"
 require "roadmap/routes/admin/projects"
 require "roadmap/routes/admin/settings"
+require "roadmap/routes/admin/types"
 require "roadmap/app"
 
 # Setup Sequel
