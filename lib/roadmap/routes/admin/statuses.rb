@@ -47,6 +47,26 @@ module Roadmap
 
           view 'admin/statuses/new'
         end
+
+        # Edit status
+        get '/admin/statuses/:id/edit' do
+          @status = Status.find(id: params[:id])
+          view 'admin/statuses/edit'
+        end
+
+        # Save status
+        post '/admin/statuses/:id/edit' do
+          @status = Status.find(id: params[:id])
+          @status.name = params[:status][:name]
+          @status.is_open = params[:status][:is_open] || 0
+
+          if @status.valid?
+            @status.save
+            redirect '/admin/statuses'
+          end
+
+          view 'admin/statuses/edit'
+        end
       end # Statuses
     end # Admin
   end # Routes
