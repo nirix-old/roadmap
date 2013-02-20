@@ -19,7 +19,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'rack',             '~> 1.5.1'
   gem.add_dependency 'sinatra',          '~> 1.3.4'
-  gem.add_dependency 'rocketeer',        '~> 0.6.0'
+  gem.add_dependency 'rocketeer',        '~> 0.6.1'
   gem.add_dependency 'sequel',           '~> 3.44.0'
   gem.add_dependency 'sequel_sluggable', '~> 0.0.6'
   gem.add_dependency 'mysql2',           '~> 0.3.11'
