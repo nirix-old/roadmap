@@ -47,6 +47,7 @@ module Roadmap
         require "roadmap/models/permission"
         require "roadmap/models/project"
         require "roadmap/models/setting"
+        require "roadmap/models/status"
         require "roadmap/models/type"
         require "roadmap/models/user"
 
