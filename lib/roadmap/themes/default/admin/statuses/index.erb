@@ -1,0 +1,29 @@
+<div class="admin statuses listing content">
+	<div class="page-actions">
+		<%=link_to t(:new_status), '/admin/statuses/new', class: 'btn-new' %>
+	</div>
+	<h2 class="page-title"><%=t :statuses %></h2>
+	<table class="listing table table-striped table-hover">
+		<thead>
+			<tr>
+				<th class="name"><%=t :name %></th>
+				<th class="project"><%=t :project %></th>
+				<th class="actions"><%=t :actions %></th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @statuses.each do |status| %>
+			<tr>
+				<td><%=link_to status.name, "/admin/statuses/#{status.id}/edit" %></td>
+				<td>
+					<%= if status.is_global then t(:global) else status.project.name end %>
+				</td>
+				<td>
+					<%=link_to t(:edit), "/admin/statuses/#{status.id}/edit", class: 'btn-edit' %>
+					<%=link_to t(:delete), "/admin/statuses/#{status.id}/delete", class: 'btn-delete' %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>
