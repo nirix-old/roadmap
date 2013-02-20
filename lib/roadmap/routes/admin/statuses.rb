@@ -67,6 +67,13 @@ module Roadmap
 
           view 'admin/statuses/edit'
         end
+
+        # Delete status
+        get '/admin/statuses/:id/delete' do
+          @status = Status.find(id: params[:id]).delete
+          flash[:success] = t(:status_deleted_successfully)
+          redirect '/admin/statuses'
+        end
       end # Statuses
     end # Admin
   end # Routes
