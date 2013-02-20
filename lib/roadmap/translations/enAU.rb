@@ -88,8 +88,13 @@ module Roadmap
         t['new_type']    = "New Type"
         t['global']      = "Global"
         t['project']     = "Project"
+        t['statuses']    = "Statuses"
+        t['new_status']  = "New Status"
+        t['edit_status'] = "Edit Status"
+        t['is_open']     = "Is open"
         t['project_deleted_successfully'] = "Project deleted successfully"
         t['type_deleted_successfully']    = "Type deleted successfully"
+        t['status_deleted_successfully']  = "Status deleted successfully"
 
         # Project settings
         t['enable_wiki'] = "Enable wiki"
@@ -100,6 +105,7 @@ module Roadmap
 
         # Help
         t['help.slug'] = "URL safe string."
+        t['help.status_is_open'] = "Is this status for open tickets?"
 
         # Errors
         t['errors.invalid_username_or_password'] = "Invalid username and/or password"
