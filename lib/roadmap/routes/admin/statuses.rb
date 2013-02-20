@@ -25,6 +25,28 @@ module Roadmap
           @statuses = Status.order_by(:is_global.desc, :name.asc).all
           view 'admin/statuses/index'
         end
+
+        # New status
+        get '/admin/statuses/new' do
+          @status = Status.new({ is_global: 1 })
+          view 'admin/statuses/new'
+        end
+
+        # Create status
+        post '/admin/statuses/new' do
+          @status = Status.new({
+            name: params[:status][:name],
+            is_open: params[:status][:is_open] || 0,
+            is_global: 1
+          })
+
+          if @status.valid?
+            @status.save
+            redirect '/admin/statuses'
+          end
+
+          view 'admin/statuses/new'
+        end
       end # Statuses
     end # Admin
   end # Routes
