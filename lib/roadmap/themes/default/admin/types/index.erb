@@ -15,7 +15,9 @@
 		<% @types.each do |type| %>
 			<tr>
 				<td><%=link_to type.name, "/admin/types/#{type.id}/edit" %></td>
-				<td></td>
+				<td>
+					<%= if type.is_global then t(:global) else type.project.name end %>
+				</td>
 				<td>
 					<%=link_to t(:edit), "/admin/types/#{type.id}/edit", class: 'btn-edit' %>
 					<%=link_to t(:delete), "/admin/types/#{type.id}/delete", class: 'btn-delete' %>
