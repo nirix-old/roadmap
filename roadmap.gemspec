@@ -26,6 +26,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'bcrypt-ruby',      '~> 3.0.1'
   gem.add_dependency 'redcarpet',        '~> 2.2.2'
   gem.add_dependency 'rack-flash3',      '~> 1.0.3'
+  gem.add_dependency 'shebang',          '~> 0.1'
 
   gem.add_development_dependency 'sass',       '~> 3.2.5'
   gem.add_development_dependency 'bacon',      '~> 1.2.0'
