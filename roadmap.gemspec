@@ -32,4 +32,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'bacon',      '~> 1.2.0'
   gem.add_development_dependency 'listen',     '~> 0.7.2'
   gem.add_development_dependency 'rb-fsevent', '~> 0.9.3'
+  gem.add_development_dependency 'rake',       '~> 10.0.3'
 end
