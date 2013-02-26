@@ -33,4 +33,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'listen',     '~> 0.7.2'
   gem.add_development_dependency 'rb-fsevent', '~> 0.9.3'
   gem.add_development_dependency 'rake',       '~> 10.0.3'
+  gem.add_development_dependency 'rack-test',  '~> 0.6.2'
+  gem.add_development_dependency 'sqlite3',    '~> 1.3.7'
+  gem.add_development_dependency 'bacon-colored_output', '~> 1.0.1'
 end
