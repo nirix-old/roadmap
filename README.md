@@ -3,6 +3,8 @@ Roadmap
 
 Roadmap is a multiple project issue tracker.
 
+[![Build Status](https://travis-ci.org/nirix/roadmap.png?branch=master)](https://travis-ci.org/nirix/roadmap)
+
 Installation
 ------------
 
