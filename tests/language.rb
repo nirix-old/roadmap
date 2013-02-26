@@ -1,6 +1,3 @@
-require "bacon"
-require File.expand_path('../../lib/roadmap/language', __FILE__)
-require File.expand_path('../../lib/roadmap/language/translation', __FILE__)
 require File.expand_path('../test_language', __FILE__)
 
 Roadmap::Language.use :test
