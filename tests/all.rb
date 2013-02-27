@@ -17,7 +17,22 @@ Sequel::Migrator.run DB, File.expand_path(__FILE__ + '/../../lib/roadmap/db/migr
 # Default data
 require File.expand_path(__FILE__ + '/../../lib/roadmap/db/defaults.rb')
 
+# Load roadmap
 require 'roadmap'
+
+def set_sess(key, val)
+  get "/set_sess/#{key}/#{val}"
+end
+
+module Roadmap
+  module Routes
+    class Base
+      get '/set_sess/:key/:val' do
+        session[params[:key]] = params[:val]
+      end
+    end
+  end
+end
 
 # Configure Roadmap
 Roadmap.config do |app|
