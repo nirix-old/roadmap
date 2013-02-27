@@ -65,7 +65,7 @@ module Roadmap
         # Save user and redirect if valid
         if @user.valid?
           @user.save
-          redirect '/'
+          redirect '/login'
         else
           view "users/register"
         end
