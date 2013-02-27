@@ -49,7 +49,7 @@ Sequel.migration do
       String :password, :size=>255, :null=>false
       String :email, :size=>255, :null=>false
       String :name, :size=>255
-      String :group_id, :default=>"3", :size=>255, :null=>false
+      String :group_id, :default=>"2", :size=>255, :null=>false
     end
   end
 end
