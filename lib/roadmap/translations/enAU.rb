@@ -79,6 +79,7 @@ module Roadmap
         t['type']             = "Type"
 
         # Admin
+        t['dashboard']   = "Dashboard"
         t['settings']    = "Settings"
         t['title']       = "Title"
         t['language']    = "Language"
