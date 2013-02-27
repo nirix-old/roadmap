@@ -4,6 +4,10 @@ require "rack/test"
 require "sequel"
 Sequel.extension :migration
 
+# Ensure lib directory is in the path
+lib = File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
 # Database connection
 DB = Sequel.sqlite(':memory:')
 
@@ -13,7 +17,7 @@ Sequel::Migrator.run DB, File.expand_path(__FILE__ + '/../../lib/roadmap/db/migr
 # Default data
 require File.expand_path(__FILE__ + '/../../lib/roadmap/db/defaults.rb')
 
-require File.expand_path(__FILE__ + '/../../lib/roadmap.rb')
+require 'roadmap'
 
 # Configure Roadmap
 Roadmap.config do |app|
