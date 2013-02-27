@@ -29,6 +29,23 @@ Roadmap.config do |app|
   app.database = DB
 end
 
+# Insert admin user
+Roadmap::Models::User.new({
+  name: 'Admin',
+  username: 'admin',
+  password: 'admin',
+  email: 'admin@example.com',
+  group_id: 1
+}).save
+
+# Insert test user
+Roadmap::Models::User.new({
+  name: 'Tester',
+  username: 'tester',
+  password: 'test',
+  email: 'test@example.com'
+}).save
+
 Bacon.summary_on_exit
 
 Dir.glob(File.expand_path(File.dirname(__FILE__)) + '/**/*.rb').each do |test|
