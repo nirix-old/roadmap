@@ -30,7 +30,10 @@ Contributing
 ------------
 
 1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+2. Add your changes
+3. Write tests and make sure they pass
+4. Commit your changes and tests (`git commit -am 'Add some feature'`)
+3. Push to your repository
+4. Create new Pull Request
+
+_Tip_: Use `bundle exec ruby devserv.rb` to run Roadmap without having to build/install first.
