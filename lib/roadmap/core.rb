@@ -34,6 +34,10 @@ module Roadmap
     set root: ROADMAP_DIR
     enable :static
 
+    configure :development do
+      register Sinatra::Reloader
+    end
+
     class << self
       ##
       # Sets the database connection and loads the models.
