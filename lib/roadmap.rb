@@ -17,6 +17,7 @@
 #
 
 require "sinatra/base"
+require "sinatra/reloader"
 require "sequel"
 require "rocketeer"
 require "redcarpet"
