@@ -28,6 +28,13 @@ module Roadmap
       def admin?
         self.is_admin == 1 or self.is_admin == true
       end
+
+      ##
+      # Validations
+      #
+      def validates
+        validates_presence :name
+      end
     end
   end
 end
