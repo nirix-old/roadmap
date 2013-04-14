@@ -22,7 +22,7 @@ module Roadmap
       # 404 page
       not_found do
         title t('errors.404.title.serious')
-        view "errors/404"
+        error 404, view("errors/404")
       end
     end
   end
