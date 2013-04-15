@@ -495,6 +495,12 @@ pre {
 
 .container {
   width: 940px; }
+  .container:before, .container:after {
+    display: table;
+    content: "";
+    line-height: 0; }
+  .container:after {
+    clear: both; }
 
 .row {
   width: 100%;
@@ -758,27 +764,3 @@ textarea {
   -moz-transition: border 0.15s ease-in, background 0.15s ease-in;
   -o-transition: border 0.15s ease-in, background 0.15s ease-in;
   transition: border 0.15s ease-in, background 0.15s ease-in; }
-
-.debug .row [class*="span"], .debug .row-fluid [class*="span"] {
-  background-color: #ddd;
-  line-height: 30px;
-  min-height: 30px;
-  text-align: center;
-  border-radius: 5px; }
-  .debug .row [class*="span"] .row, .debug .row [class*="span"] .row-fluid, .debug .row-fluid [class*="span"] .row, .debug .row-fluid [class*="span"] .row-fluid {
-    margin-bottom: 0; }
-    .debug .row [class*="span"] .row [class*="span"], .debug .row [class*="span"] .row-fluid [class*="span"], .debug .row-fluid [class*="span"] .row [class*="span"], .debug .row-fluid [class*="span"] .row-fluid [class*="span"] {
-      background-color: #bbb; }
-      .debug .row [class*="span"] .row [class*="span"]:hover, .debug .row [class*="span"] .row-fluid [class*="span"]:hover, .debug .row-fluid [class*="span"] .row [class*="span"]:hover, .debug .row-fluid [class*="span"] .row-fluid [class*="span"]:hover {
-        background: #aaa; }
-  .debug .row [class*="span"]:hover, .debug .row-fluid [class*="span"]:hover {
-    background-color: #ccc; }
-.debug .fluid-grid {
-  margin: 0 auto;
-  width: 50%;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in; }
-  .debug .fluid-grid:hover {
-    width: 100%; }
