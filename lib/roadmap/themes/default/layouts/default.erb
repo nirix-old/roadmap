@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<div id="header">
-			<div class="container">
+			<div class="container centered">
 				<h1><%=link_to setting(:title), '/' %></h1>
 				<div id="nav">
 					<ul class="meta">
@@ -30,13 +30,13 @@
 			</div>
 		</div>
 		<div id="page">
-			<div class="container">
+			<div class="container centered">
 				<%=render_partial 'layouts/flash_messages' %>
 				<%=yield%>
 			</div>
 		</div>
 		<div id="footer">
-			<div class="container">
+			<div class="container centered">
 				<%=t :copyright %>
 			</div>
 		</div>
