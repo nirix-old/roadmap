@@ -9,18 +9,21 @@
 
   a {
     color: #fff;
-
-    &:hover {
-      text-decoration: none;
-    }
+    text-decoration: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
   }
 
   h1 {
     padding-top: 2px;
+    padding-bottom: 4px;
     float: left;
     font-size: 26px;
     margin: 0;
     margin-right: 15px;
+    line-height: 40px;
   }
 
   #nav {
